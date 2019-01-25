@@ -1,7 +1,8 @@
-/** @jsx jsx */
-import { keyframes, jsx, css } from '@emotion/core'
+import React from 'react'
+import { keyframes } from '@emotion/core'
 import styled from '@emotion/styled'
 import logo from './logo.svg'
+import Button from './components/button'
 
 const AppLogoSpin = keyframes`
   from {
@@ -37,11 +38,7 @@ const App = () => (
   <AppContainer>
     <AppHeader className="App-header">
       <AppLogo src={logo} className="App-logo" alt="logo" />
-      <p
-        css={css`
-          color: red;
-        `}
-      >
+      <p>
         Edit
         {' '}
         <code>src/App.js</code>
@@ -51,6 +48,13 @@ and save to reload.
       <Link href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </Link>
+      <Button>
+        Emotion
+        {' '}
+        <code>css</code>
+        {' '}
+example
+      </Button>
     </AppHeader>
   </AppContainer>
 )
