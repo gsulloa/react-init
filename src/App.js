@@ -1,7 +1,6 @@
-import React from 'react'
-import { keyframes } from '@emotion/core'
+/** @jsx jsx */
+import { keyframes, jsx, css } from '@emotion/core'
 import styled from '@emotion/styled'
-
 import logo from './logo.svg'
 
 const AppLogoSpin = keyframes`
@@ -38,7 +37,11 @@ const App = () => (
   <AppContainer>
     <AppHeader className="App-header">
       <AppLogo src={logo} className="App-logo" alt="logo" />
-      <p>
+      <p
+        css={css`
+          color: red;
+        `}
+      >
         Edit
         {' '}
         <code>src/App.js</code>
