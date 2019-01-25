@@ -13,17 +13,18 @@
     "node": true,
     "browser": true
   },
-  "extends": [
-    "prettier",
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "airbnb"
-  ],
+  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended", "airbnb"],
   "plugins": ["prettier", "react"],
   "rules": {
     "no-console": ["error", { "allow": ["error"] }],
     "arrow-parens": ["error", "as-needed"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [".storybook/**", "src/stories/**"]
+      }
+    ]
   }
 }
