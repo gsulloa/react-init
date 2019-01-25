@@ -7,6 +7,8 @@ import EmotionProvider from './config/emotion'
 
 import * as serviceWorker from './serviceWorker'
 
+import './services/logrocket'
+
 if (process.env.NODE_ENV !== 'production') {
   const { whyDidYouUpdate } = require('why-did-you-update') // eslint-disable-line global-require
   whyDidYouUpdate(React)
