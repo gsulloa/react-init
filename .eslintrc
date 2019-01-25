@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaVersion": 2017,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -19,5 +19,11 @@
     "plugin:react/recommended",
     "airbnb"
   ],
-  "plugins": ["prettier", "react"]
+  "plugins": ["prettier", "react"],
+  "rules": {
+    "no-console": ["error", { "allow": ["error"] }],
+    "arrow-parens": ["error", "as-needed"],
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "semi": ["error", "never"]
+  }
 }
