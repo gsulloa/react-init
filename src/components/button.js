@@ -17,7 +17,7 @@ const Button = ({ children, ...props }) => (
   </button>
 )
 Button.propTypes = {
-  children: t.element.isRequired,
+  children: t.oneOfType([t.element, t.array, t.string]).isRequired,
 }
 
 export default Button
