@@ -1,0 +1,2 @@
+export REACT_APP_LOGROCKET_ID=
+export REACT_APP_SENTRY_DSN=https://***@sentry.io/***

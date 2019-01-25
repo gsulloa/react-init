@@ -48,7 +48,11 @@ and save to reload.
       <Link href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </Link>
-      <Button>
+      <Button
+        onClick={() => {
+          throw new Error('testing sentry with logrocket')
+        }}
+      >
         Emotion
         {' '}
         <code>css</code>
