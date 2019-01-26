@@ -1,5 +1,5 @@
 defaults: &defaults
-  working_directory: ~/react-init
+  working_directory: ~/app
   docker:
     - image: circleci/node:9.10
     - image: cypress/base:8
