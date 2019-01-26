@@ -10,15 +10,6 @@ orbs:
 jobs:
   build:
     <<: *defaults
-    jobs:
-      - cypress/install:
-          build: 'yarn build'
-      - cypress/run:
-          # job will use workspace with code and dependencies
-          # installed by the "install" job
-          requires:
-            - cypress/install
-          start: 'yarn start' # start server before running tests
     steps:
       - checkout
       - restore_cache:
@@ -64,9 +55,11 @@ workflows:
   workflow:
     jobs:
       - build
+      - cypress/install
       - test:
           requires:
             - build
+            - cypress/install
       - lint:
           requires:
             - build
