@@ -16,11 +16,12 @@ jobs:
           keys:
             - v2-cache-{{ checksum "package.json" }}
             - v2-cache-
-      - run: yarn install
+      - run: npm install
       - save_cache:
           paths:
             - node_modules
             - yarn.lock
+            - package-lock.json
           key: v2-cache-{{ checksum "package.json" }}
       - persist_to_workspace:
           root: ./
@@ -55,10 +56,11 @@ workflows:
   workflow:
     jobs:
       - build
-      - cypress/install
+      - cypress/install:
+          - requires:
+              - build
       - test:
           requires:
-            - build
             - cypress/install
       - lint:
           requires:
