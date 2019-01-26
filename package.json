@@ -23,12 +23,19 @@
     "why-did-you-update": "^1.0.6"
   },
   "scripts": {
-    "start": "PORT=8080 react-scripts start",
+    "dev": "PORT=8080 react-scripts start",
+    "start": "yarn build && serve -s build -p 8080",
     "build": "react-scripts build",
     "test": "is-ci \"test:cov\" \"test:watch\"",
     "test:watch": "react-scripts test",
     "test:debug": "react-scripts --inspect-brk test --runInBand",
     "test:cov": "react-scripts test --coverage",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "test:e2e": "is-ci \"test:e2e:run\" \"test:e2e:dev\"",
+    "test:e2e:run": "start-server-and-test start http://localhost:8080 cy:run",
+    "test:e2e:dev": "start-server-and-test start http://localhost:8080 cy:open",
+    "validate": "yarn test:cov && yarn test:e2e:run",
     "eject": "react-scripts eject",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
@@ -64,7 +71,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "is-ci-cli": "^1.1.1"
+    "is-ci-cli": "^1.1.1",
+    "serve": "^10.1.1",
+    "start-server-and-test": "^1.7.11"
   },
   "jest": {
     "collectCoverageFrom": [
