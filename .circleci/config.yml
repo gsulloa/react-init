@@ -61,6 +61,9 @@ workflows:
       - test:
           requires:
             - build
+      - e2e:
+          requires:
+            - build
       - lint:
           requires:
             - build
@@ -68,6 +71,7 @@ workflows:
           requires:
             - test
             - lint
+            - e2e
           filters:
             branches:
               only:
