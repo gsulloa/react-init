@@ -16,7 +16,7 @@ jobs:
           keys:
             - v2-cache-{{ checksum "package.json" }}
             - v2-cache-
-      - run: yarn
+      - run: yarn install
       - save_cache:
           paths:
             - node_modules
