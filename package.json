@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
+    "@rematch/core": "^1.0.6",
     "@sentry/browser": "^4.5.3",
     "emotion-theming": "^10.0.6",
     "i18next": "^14.0.1",
