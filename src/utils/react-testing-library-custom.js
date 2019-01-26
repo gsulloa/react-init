@@ -1,11 +1,14 @@
 import React from 'react'
 import { render as rtlRender } from 'react-testing-library'
-import withRouter from '../config/router'
+import { MemoryRouter } from 'react-router-dom'
+import withProvider from '../config/withProvider'
 import pipe from './pipe'
 
-function render(ui, ...rest) {
+const withMemoryRouter = initialEntries => withProvider(MemoryRouter, { initialEntries })
+
+function render(ui, { initialEntries } = {}, ...rest) {
   const ComponentUi = () => ui
-  const WithProviders = pipe(withRouter)(ComponentUi)
+  const WithProviders = pipe(withMemoryRouter(initialEntries))(ComponentUi)
   return rtlRender(<WithProviders />, ...rest)
 }
 
