@@ -6,7 +6,7 @@ import App from './App'
 import withEmotionProvider from './config/emotion'
 import withI18nProvider from './config/i18n'
 import withRouter from './config/router'
-import withStore from './config/rematch'
+import withStore, { withPersistor } from './config/rematch'
 
 import * as serviceWorker from './serviceWorker'
 
@@ -19,7 +19,13 @@ import useWhyDidYouUpdate from './services/whyDidYouUpdate'
 const services = [useLogRocket, useSentry, useWhyDidYouUpdate]
 services.forEach(service => service())
 
-const providers = [withEmotionProvider, withI18nProvider, withRouter, withStore].reverse()
+const providers = [
+  withEmotionProvider,
+  withI18nProvider,
+  withRouter,
+  withStore,
+  withPersistor,
+].reverse()
 
 const RootApp = pipe(...providers)(App)
 ReactDOM.render(<RootApp />, document.getElementById('root'))
