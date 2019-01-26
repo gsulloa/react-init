@@ -11,4 +11,10 @@ const persistor = getPersistor()
 const withStore = withProvider(RematchProvider, { store })
 export const withPersistor = withProvider(PersistGate, { persistor })
 
+export const cleanStore = async () => {
+  await persistor.purge()
+  persistor.persist()
+  persistor.flush()
+}
+
 export default withStore

@@ -20,9 +20,13 @@ const createStore = ({ models = {} } = {}) => {
     models,
     redux: {
       middlewares,
+      rootReducers: {
+        RESET: () => undefined,
+      },
     },
     plugins: [persistPlugin, loadingPlugin],
   })
+  window.store = store
   return store
 }
 
