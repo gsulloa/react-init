@@ -50,7 +50,7 @@ and save to reload.
       </Link>
       <Button
         onClick={() => {
-          throw new Error('testing sentry with logrocket')
+          // throw new Error('testing sentry with logrocket')
         }}
       >
         Emotion

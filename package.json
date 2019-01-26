@@ -23,7 +23,7 @@
     "why-did-you-update": "^1.0.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=8080 react-scripts start",
     "build": "react-scripts build",
     "test": "is-ci \"test:cov\" \"test:watch\"",
     "test:watch": "react-scripts test",
