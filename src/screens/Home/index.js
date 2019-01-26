@@ -36,8 +36,8 @@ const Link = styled.a`
 
 const Home = () => (
   <HomeContainer>
-    <HomeHeader className="Home-header">
-      <HomeLogo src={logo} className="Home-logo" alt="logo" />
+    <HomeHeader>
+      <HomeLogo src={logo} alt="logo" />
       <p>
         Edit
         {' '}
@@ -50,7 +50,7 @@ and save to reload.
       </Link>
       <Button
         onClick={() => {
-          throw new Error('testing sentry with logrocket')
+          // throw new Error('testing sentry with logrocket')
         }}
       >
         Emotion

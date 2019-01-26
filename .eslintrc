@@ -11,10 +11,11 @@
     "es6": true,
     "jest": true,
     "node": true,
-    "browser": true
+    "browser": true,
+    "cypress/globals": true
   },
   "extends": ["prettier", "eslint:recommended", "plugin:react/recommended", "airbnb"],
-  "plugins": ["prettier", "react"],
+  "plugins": ["prettier", "react", "eslint-plugin-cypress"],
   "rules": {
     "no-console": ["error", { "allow": ["error"] }],
     "arrow-parens": ["error", "as-needed"],
