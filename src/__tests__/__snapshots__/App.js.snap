@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match snapshot 1`] = `
+<div
+  class="css-1yltisf"
+>
+  <header
+    class="css-7nn98v"
+  >
+    <img
+      alt="logo"
+      class="css-klnotm"
+      src="logo.svg"
+    />
+    <p>
+      Edit
+       
+      <code>
+        src/Home.js
+      </code>
+       
+      and save to reload.
+    </p>
+    <a
+      class="css-6ugldh"
+      href="https://reactjs.org"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Learn React
+    </a>
+    <button
+      class="css-e9t3bf-Button"
+      type="button"
+    >
+      Emotion
+       
+      <code>
+        css
+      </code>
+       
+      example
+    </button>
+  </header>
+</div>
+`;
