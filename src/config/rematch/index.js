@@ -1,8 +1,10 @@
-import { init } from '@rematch/core'
+import { Provider as RematchProvider } from 'react-redux'
+import withProvider from '../withProvider'
 import * as models from './models'
+import createStore from './store'
 
-const store = init({
-  models,
-})
+const store = createStore({ models })
 
-export default store
+const withStore = withProvider(RematchProvider, { store })
+
+export default withStore
