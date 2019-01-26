@@ -12,7 +12,7 @@ const screens = [
 const App = () => (
   <Switch>
     {screens.map(screen => (
-      <Route {...screen} key={screen.path} />
+      <Route {...screen} key={screen.path} exact />
     ))}
     <Route render={() => <div>not found</div>} />
   </Switch>
