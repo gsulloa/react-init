@@ -1071,6 +1071,11 @@
   dependencies:
     redux "4.0.0"
 
+"@rematch/loading@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@rematch/loading/-/loading-1.1.2.tgz#7c43d2c1f65b636d43c0d510bd170fb70f35fc15"
+  integrity sha512-bkTfAufspncDTCYt5D/dP9JBnU73GqHtFW1MbECBWaltxuprM5VxbTJikh29x9UYDf+qJIR/gS+zWm04r0WkcQ==
+
 "@rematch/persist@^1.1.5":
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/@rematch/persist/-/persist-1.1.5.tgz#688977993ef7d81d0b73f79a639df7ceff33d3ec"

@@ -6,6 +6,7 @@
     "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
     "@rematch/core": "^1.0.6",
+    "@rematch/loading": "^1.1.2",
     "@rematch/persist": "^1.1.5",
     "@sentry/browser": "^4.5.3",
     "emotion-theming": "^10.0.6",
