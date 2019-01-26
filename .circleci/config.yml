@@ -14,14 +14,15 @@ jobs:
           name: Install Dependencies
           command: yarn install --frozen-lockfile
       - persist_to_workspace:
-          root: ~/
+          root: ./
           paths:
-            - .cache
+            - ./
+            - ~/.cache
   test:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/
+          at: ./
       - run: yarn test:cov
       - store_test_results:
           path: ./coverage
@@ -34,7 +35,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/
+          at: ./
       - run: yarn lint
   deploy:
     <<: *defaults
