@@ -1,11 +1,8 @@
-import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
+import withProvider from '../withProvider'
 
 const theme = {}
 
-const withEmotionProvider = WrappedComponent => props => (
-  <ThemeProvider theme={theme}>
-    <WrappedComponent {...props} />
-  </ThemeProvider>
-)
+const withEmotionProvider = withProvider(ThemeProvider, { theme })
+
 export default withEmotionProvider
