@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 
-import EmotionProvider from './config/emotion'
+import withEmotionProvider from './config/emotion'
+import withI18nProvider from './config/i18n'
 
 import * as serviceWorker from './serviceWorker'
+
+import pipe from './utils/pipe'
 
 import './services/logrocket'
 import './services/sentry'
@@ -15,14 +18,9 @@ if (process.env.NODE_ENV !== 'production') {
   whyDidYouUpdate(React)
 }
 
-const providers = [EmotionProvider]
+const providers = [withEmotionProvider, withI18nProvider]
 
-const RootApp = () => [...providers, App].reduce((Comp1, Comp2) => (
-  <Comp1>
-    <Comp2 />
-  </Comp1>
-))
-
+const RootApp = pipe(...providers)(App)
 ReactDOM.render(<RootApp />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
