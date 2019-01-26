@@ -14,7 +14,6 @@ jobs:
             - v2-cache-{{ checksum "package.json" }}
             - v2-cache-
       - run: yarn
-      - run: yarn cypress install
       - save_cache:
           paths:
             - node_modules
@@ -29,6 +28,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ./
+      - run: yarn cypress install
       - run: yarn validate
       - store_test_results:
           path: ./coverage
