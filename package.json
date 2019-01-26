@@ -25,7 +25,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "is-ci \"test:cov\" \"test:watch\"",
+    "test:watch": "react-scripts test",
     "test:debug": "react-scripts --inspect-brk test --runInBand",
     "test:cov": "react-scripts test --coverage",
     "eject": "react-scripts eject",
@@ -59,7 +60,8 @@
     "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "is-ci-cli": "^1.1.1"
   },
   "jest": {
     "collectCoverageFrom": [
