@@ -1,15 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`match snapshot 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.emotion-4 {
+  text-align: center;
+}
+
+.emotion-3 {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.emotion-0 {
+  -webkit-animation: animation-0 infinite 20s linear;
+  animation: animation-0 infinite 20s linear;
+  height: 40vmin;
+}
+
+.emotion-1 {
+  color: #61dafb;
+}
+
+.emotion-2 {
+  color: blue;
+}
+
+.emotion-2 code {
+  color: red;
+}
+
 <div
-  class="css-1yltisf"
+  class="emotion-4"
 >
   <header
-    class="css-7nn98v"
+    class="emotion-3"
   >
     <img
       alt="logo"
-      class="css-klnotm"
+      class="emotion-0"
       src="logo.svg"
     />
     <p>
@@ -22,7 +80,7 @@ exports[`match snapshot 1`] = `
       and save to reload.
     </p>
     <a
-      class="css-6ugldh"
+      class="emotion-1"
       href="https://reactjs.org"
       rel="noopener noreferrer"
       target="_blank"
@@ -30,7 +88,7 @@ exports[`match snapshot 1`] = `
       Learn React
     </a>
     <button
-      class="css-e9t3bf-Button"
+      class="emotion-2"
       type="button"
     >
       Emotion

@@ -1,21 +1,17 @@
 import React from 'react'
-import { render } from 'react-testing-library'
-import withRouter from '../config/router'
+import { render } from '../utils/react-testing-library-custom'
 import App from '../App'
 
 it('renders without crashing', () => {
-  const RouterApp = withRouter(App)
-  render(<RouterApp />)
+  render(<App />)
 })
 
 it('renders welcome message', () => {
-  const RouterApp = withRouter(App)
-  const { getByText } = render(<RouterApp />)
+  const { getByText } = render(<App />)
   expect(getByText('Learn React')).toBeInTheDocument()
 })
 
 it('match snapshot', () => {
-  const RouterApp = withRouter(App)
-  const { container } = render(<RouterApp />)
+  const { container } = render(<App />)
   expect(container.firstChild).toMatchSnapshot()
 })

@@ -9,6 +9,7 @@
     "emotion-theming": "^10.0.6",
     "i18next": "^14.0.1",
     "jest-dom": "^3.0.0",
+    "jest-emotion": "^10.0.6",
     "logrocket": "^0.6.19",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
