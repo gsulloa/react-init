@@ -1,0 +1,79 @@
+defaults: &defaults
+  working_directory: ~/react-init
+  docker:
+    - image: circleci/node:9.10
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v2-deps-{{ .Branch }}-{{ checksum "package.json" }}
+            - v2-deps-{{ .Branch }}
+            - v2-deps
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+      - save_cache:
+          key: v2-deps-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - ./
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ./
+      - run: yarn test:cov
+      - store_test_results:
+          path: ./coverage
+      - store_artifacts:
+          path: ./coverage/lcov-report
+          destination: coverage
+  e2e:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: echo 'E2E CI NOT IMPLEMENTED'
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ./
+      - run: yarn lint
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+      - run: echo 'DEPLOY_NOT_IMPLEMENTED'
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - e2e:
+          requires:
+            - build
+      - lint:
+          requires:
+            - build
+      - deploy:
+          requires:
+            - test
+            - lint
+            - e2e
+          filters:
+            branches:
+              only:
+                - master
+                - development
