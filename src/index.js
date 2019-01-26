@@ -10,9 +10,11 @@ import * as serviceWorker from './serviceWorker'
 
 import pipe from './utils/pipe'
 
-import './services/logrocket'
-import './services/sentry'
+import useLogRocket from './services/logrocket'
+import useSentry from './services/sentry'
 
+const services = [useLogRocket, useSentry]
+services.forEach(service => service())
 if (process.env.NODE_ENV !== 'production') {
   const { whyDidYouUpdate } = require('why-did-you-update') // eslint-disable-line global-require
   whyDidYouUpdate(React)
