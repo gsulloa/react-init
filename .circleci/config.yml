@@ -42,7 +42,7 @@ jobs:
       - store_artifacts:
           path: ./coverage/lcov-report
           destination: coverage
-      - run: yarn test:e2e:run
+      - run: $(yarn bin)/cypress run
 
   lint:
     <<: *defaults
