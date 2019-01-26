@@ -1,11 +1,8 @@
 defaults: &defaults
-  working_directory: ~/app
+  working_directory: ~/react-init
   docker:
     - image: circleci/node:9.10
     - image: cypress/base:8
-      environment:
-        ## this enables colors in the output
-        TERM: xterm
 
 version: 2
 jobs:
