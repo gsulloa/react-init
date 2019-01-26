@@ -1,21 +1,11 @@
-import i18n from 'i18next'
-import * as es from './translates/es'
-import * as en from './translates/en'
+import React from 'react'
+import t from 'prop-types'
+import { I18nextProvider } from 'react-i18next'
+import instance from './instance'
 
-i18n.init({
-  fallbackLng: 'es',
-  lng: localStorage.language,
-  debug: process.env.NODE_ENV === 'development',
-  resources: {
-    en,
-    es,
-  },
-  returnObjects: true,
-  // react i18next special options (optional)
-  react: {
-    wait: false,
-    bindI18n: 'languageChanged loaded',
-    bindStore: 'added removed',
-    nsMode: 'default',
-  },
-})
+const Provider = ({ children }) => <I18nextProvider i18n={instance}>{children}</I18nextProvider>
+Provider.propTypes = {
+  children: t.element.isRequired,
+}
+
+export default Provider
