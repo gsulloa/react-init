@@ -12,8 +12,10 @@ addDecorator(story => {
   const WithProviders = pipe(...providers)(story)
   return <WithProviders />
 })
+const req = require.context('../src/stories', true, /\.js$/)
+
 function loadStories() {
-  require('../src/stories')
+  req.keys().forEach(filename => req(filename))
 }
 
 configure(loadStories, module)
