@@ -1,5 +1,6 @@
 import React from 'react'
-import { render as rtlRender } from 'react-testing-library'
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { render as rtlRender } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import withProvider from '../config/withProvider'
 import pipe from './pipe'
@@ -12,5 +13,5 @@ function render(ui, { initialEntries } = {}, ...rest) {
   return rtlRender(<WithProviders />, ...rest)
 }
 
-export * from 'react-testing-library'
+export * from '@testing-library/react'
 export { render }
