@@ -1,2 +1,3 @@
 // export default as NAME from './name'
-export {}
+const a = 5
+export { a } // eslint-disable-line

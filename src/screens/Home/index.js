@@ -1,8 +1,8 @@
 import React from 'react'
 import { keyframes } from '@emotion/core'
 import styled from '@emotion/styled'
-import logo from '../../logo.svg'
-import Button from '../../components/button'
+import logo from 'logo.svg'
+import Button from 'components/button'
 
 const HomeLogoSpin = keyframes`
   from {

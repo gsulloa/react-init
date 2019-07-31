@@ -14,10 +14,25 @@
     "browser": true,
     "cypress/globals": true
   },
-  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "react-app",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
   "plugins": ["prettier", "react", "eslint-plugin-cypress"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  },
   "rules": {
-    "no-console": ["error", { "allow": ["error"] }],
+    "no-console": ["error", { "allow": ["error", "warning"] }],
     "arrow-parens": ["error", "as-needed"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "semi": ["error", "never"],
