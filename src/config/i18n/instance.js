@@ -17,6 +17,7 @@ i18n.init({
     bindI18n: 'languageChanged loaded',
     bindStore: 'added removed',
     nsMode: 'default',
+    useSuspense: false,
   },
 })
 
