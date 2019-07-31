@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './screens/Home'
-import routes from './config/router/routes'
+import Home from 'screens/Home'
+import routes from 'config/router/routes'
 
 const App = () => (
   <Switch>
