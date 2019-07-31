@@ -1,24 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
+import App from 'App'
 
-import withEmotionProvider from './config/emotion'
-import withI18nProvider from './config/i18n'
-import withRouter from './config/router'
+import withEmotionProvider from 'config/emotion'
+import withI18nProvider from 'config/i18n'
+import withRouter from 'config/router'
 
-import * as serviceWorker from './serviceWorker'
+import * as serviceWorker from 'serviceWorker'
 
-import pipe from './utils/pipe'
+import pipe from 'utils/pipe'
 
-import useLogRocket from './services/logrocket'
-import useSentry from './services/sentry'
-import useWhyDidYouUpdate from './services/whyDidYouUpdate'
+import useLogRocket from 'services/logrocket'
+import useSentry from 'services/sentry'
+import useWhyDidYouUpdate from 'services/whyDidYouUpdate'
+import withApolloProvider from 'config/apollo'
 
 const services = [useLogRocket, useSentry, useWhyDidYouUpdate]
 services.forEach(service => service())
 
-const providers = [withEmotionProvider, withI18nProvider, withRouter].reverse()
+const providers = [withEmotionProvider, withI18nProvider, withRouter, withApolloProvider].reverse()
 
 const RootApp = pipe(...providers)(App)
 ReactDOM.render(<RootApp />, document.getElementById('root'))
