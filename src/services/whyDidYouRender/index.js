@@ -2,8 +2,8 @@ import React from 'react'
 
 const useWhyDidYouUpdate = () => {
   if (process.env.NODE_ENV !== 'production') {
-    const { whyDidYouUpdate } = require('why-did-you-update') // eslint-disable-line global-require
-    whyDidYouUpdate(React)
+    const whyDidYouRender = require('@welldone-software/why-did-you-render') // eslint-disable-line global-require
+    whyDidYouRender(React)
   }
 }
 

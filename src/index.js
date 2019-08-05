@@ -13,9 +13,9 @@ import pipe from './utils/pipe'
 
 import useLogRocket from './services/logrocket'
 import useSentry from './services/sentry'
-import useWhyDidYouUpdate from './services/whyDidYouUpdate'
+import useWhyDidYouRender from './services/whyDidYouRender'
 
-const services = [useLogRocket, useSentry, useWhyDidYouUpdate]
+const services = [useLogRocket, useSentry, useWhyDidYouRender]
 services.forEach(service => service())
 
 const providers = [withEmotionProvider, withI18nProvider, withRouter].reverse()

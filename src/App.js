@@ -9,5 +9,5 @@ const App = () => (
     <Route render={() => <div>not found</div>} />
   </Switch>
 )
-
+App.whyDidYouRender = true
 export default App
