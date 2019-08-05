@@ -15,11 +15,11 @@ exports[`match snapshot at home 1`] = `
   }
 }
 
-.emotion-4 {
+.emotion-3 {
   text-align: center;
 }
 
-.emotion-3 {
+.emotion-2 {
   background-color: #282c34;
   min-height: 100vh;
   display: -webkit-box;
@@ -51,19 +51,11 @@ exports[`match snapshot at home 1`] = `
   color: #61dafb;
 }
 
-.emotion-2 {
-  color: blue;
-}
-
-.emotion-2 code {
-  color: red;
-}
-
 <div
-  class="emotion-4"
+  class="emotion-3"
 >
   <header
-    class="emotion-3"
+    class="emotion-2"
   >
     <img
       alt="logo"
@@ -88,7 +80,6 @@ exports[`match snapshot at home 1`] = `
       Learn React
     </a>
     <button
-      class="emotion-2"
       type="button"
     >
       Emotion

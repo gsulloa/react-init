@@ -1,18 +1,8 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core'
+import React from 'react'
 import t from 'prop-types'
 
 const Button = ({ children, ...props }) => (
-  <button
-    type="button"
-    css={css`
-      color: blue;
-      code {
-        color: red;
-      }
-    `}
-    {...props}
-  >
+  <button type="button" {...props}>
     {children}
   </button>
 )
